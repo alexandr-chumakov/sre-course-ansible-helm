@@ -1,1 +1,3 @@
+Based on https://github.com/vitabaks/postgresql_cluster
+
 Documentation is coming soon...
