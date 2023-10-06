@@ -12,20 +12,20 @@
 
 # if dcs_exists: false and dcs_type: "etcd"
 [etcd_cluster]  # recommendation: 3, or 5-7 nodes
-10.0.10.6 ansible_host=91.185.84.177
-10.0.10.4 ansible_host=91.185.84.178
-10.0.10.5 ansible_host=91.185.84.179
+10.0.10.6
+10.0.10.4
+10.0.10.5
 
 # if with_haproxy_load_balancing: true
 [balancers]
-10.0.10.7 ansible_host=91.185.86.249
+0.0.0.0 ansible_connection=local
 
 # PostgreSQL nodes
 [master]
-10.0.10.2 ansible_host=91.185.86.231 hostname=pg-1 postgresql_exists=false
+10.0.10.2 postgresql_exists=false
 
 [replica]
-10.0.10.3 ansible_host=77.105.185.149 hostname=pg-2 postgresql_exists=false
+10.0.10.3
 
 [postgres_cluster:children]
 master
