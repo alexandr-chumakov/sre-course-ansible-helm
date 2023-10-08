@@ -4,4 +4,4 @@
 .vscode/settings.json
 __pycache__/
 *.log
-postgresql_cluster/molecule/**/tmp
+molecule/**/tmp

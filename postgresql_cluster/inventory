@@ -39,7 +39,7 @@ replica
 [all:vars]
 ansible_connection='ssh'
 ansible_ssh_port='22'
-ansible_user='chum'
+ansible_user="{{ lookup('env', 'USER') }}"
 #ansible_ssh_pass='secretpassword'  # "sshpass" package is required for use "ansible_ssh_pass"
 ansible_ssh_private_key_file="{{ lookup('env','HOME') }}/.ssh/id_rsa"
 #ansible_python_interpreter='/usr/bin/python3'  # is required for use python3
@@ -48,4 +48,3 @@ ansible_ssh_private_key_file="{{ lookup('env','HOME') }}/.ssh/id_rsa"
 #ansible_user='chum'
 #ansible_ssh_private_key_file="{{ lookup('env','HOME') }}/.ssh/id_rsa"
 #ansible_ssh_pass='secretpassword'
-
