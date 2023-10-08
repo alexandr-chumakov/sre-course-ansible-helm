@@ -1,0 +1,6 @@
+apiVersion: v2
+name: helm-chart-weather-api
+description: A Helm chart for Kubernetes cluster on MTS cloud deploying a simple weather API, which connects to a high availability Postgres cluster. This API is going to be tested by load/performance stress, covered by monitoring etc. in scope of 4-month SRE training course.
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
