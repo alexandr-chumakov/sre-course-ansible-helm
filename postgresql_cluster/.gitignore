@@ -5,3 +5,5 @@
 __pycache__/
 *.log
 molecule/**/tmp
+*secrets.yml
+

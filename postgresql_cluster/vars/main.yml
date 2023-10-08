@@ -17,12 +17,10 @@ vip_interface: "{{ ansible_default_ipv4.interface }}"  # interface name (e.g., "
 patroni_cluster_name: "postgres-cluster"  # the cluster name (must be unique for each cluster)
 patroni_install_version: "3.1.0"  # or 'latest'
 
-patroni_superuser_username: "{{ lookup('env', 'DBUSER') }}"
-# patroni_superuser_password: "{{ lookup('hashi_vault', 'secret/sre-api/postgres') }}"  # no time to do it with HashiCorp Vault
-patroni_superuser_password: "{{ lookup('env', 'DBPASS') }}"  # please change password
-patroni_replication_username: "{{ lookup('env', 'REPLICAUSER') }}"
-# patroni_replication_password: "{{ lookup('hashi_vault', 'secret/sre-api/replicator') }}"  # please change password
-patroni_replication_password: "{{ lookup('env', 'REPLICAPASS') }}"  # please change password
+patroni_superuser_username: "postgres-api-db"
+patroni_superuser_password: "{{ vault_dbpass }}"
+patroni_replication_username: "replicator-api-db"
+patroni_replication_password: "{{ vault_dbreplica }}"
 
 synchronous_mode: false  # or 'true' for enable synchronous database replication
 synchronous_mode_strict: false  # if 'true' then block all client writes to the master, when a synchronous replica is not available
