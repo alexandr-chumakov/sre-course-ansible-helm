@@ -8,7 +8,7 @@ image:
   
 variables:
   ASPNETCORE_URLS: http://*:8081
-  CONNECTIONSTRINGS__PGCONNECTION: server=91.185.86.249; port=5000; database=weather; user id=postgres; password=postgres-pass;
+  CONNECTIONSTRINGS__PGCONNECTION: server=91.185.86.249; port=5000; database=weather; user id=$(DBUSER); password=$(DBPASS);
 
 service:
   type: ClusterIP
